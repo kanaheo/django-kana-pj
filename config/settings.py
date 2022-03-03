@@ -42,7 +42,9 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = []
 
 PJ_APPS = [
+    "core.apps.CoreConfig",
     "users.apps.UsersConfig",
+    "communities.apps.CommunitiesConfig",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PJ_APPS + THIRD_PARTY_APPS
@@ -83,8 +85,12 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "kkana",
+        "USER": "root",
+        "PASSWORD": "1q2w3e4r!",
+        "HOST": "localhost",
+        "PORT": "3306",
     }
 }
 
